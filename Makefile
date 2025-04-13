@@ -5,7 +5,9 @@ down:
 	docker-compose down
 
 install:
-	docker-compose run --rm app composer create-project --prefer-dist laravel/laravel .
+	docker-compose run --rm app composer create-project --prefer-dist laravel/laravel . \
+	&& docker-compose exec app chown -R www-data:www-data storage bootstrap/cache database \
+	&& docker-compose exec app chmod -R 775 storage bootstrap/cache database
 
 bash:
 	docker-compose exec app bash
@@ -24,6 +26,16 @@ fresh:
 
 perm:
 	sudo chown -R $$(id -u):$$(id -g) web
+
+sqlite:
+	touch web/database/database.sqlite
+	docker-compose exec app chown -R www-data:www-data database
+	docker-compose exec app chmod -R 775 database
+
+reset:
+	docker-compose down -v
+	sudo chown -R $$(id -u):$$(id -g) web || true
+	sudo rm -rf web/* web/.* 2>/dev/null || true
 
 logs:
 	docker-compose logs -f
