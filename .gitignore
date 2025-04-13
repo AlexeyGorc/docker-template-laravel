@@ -1,0 +1,86 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build output
+dist/
+build/
+.out/
+.next/
+.cache/
+.vite/
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# dotenv environment variables
+.env
+.env.*.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Coverage directory used by testing tools
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Test output
+test-results/
+junit.xml
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# PHP specific
+/vendor/
+composer.lock
+phpunit.xml
+phpunit.xml.dist
+
+# Laravel
+/storage/
+.env.testing
+Homestead.json
+Homestead.yaml
+.env.backup
+
+# Misc
+*.swp
+*.bak
+*.tmp
+
+# Binary artifacts
+*.exe
+*.dll
+*.so
+*.dylib*
